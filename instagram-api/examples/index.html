@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instagram Gallery</title>
+	<script type="text/javascript"
+			src="https://code.jquery.com/jquery-1.7.1.min.js"
+			integrity="sha256-iBcUE/x23aI6syuqF7EeT/+JFBxjPs5zeFJEXxumwb0="
+			crossorigin="anonymous"></script>
+</head>
+<body>
+	<style type="text/css">
+		#gallery {}
+		#gallery > div {display: inline-block; vertical-align: top; width: 25%;}
+		#gallery > div .img {max-width: 100%;}
+		#gallery > div.video {position: relative;}
+		#gallery > div.video video {display: none;}
+		.controls.btn {
+			background-image: url(images/controls.png);
+			width: 45px;
+			height: 45px;
+			position: absolute;
+			background-position: center;
+			background-size: 70px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			cursor: pointer;
+		}
+		#frame_video {
+			    position: fixed;
+			    z-index: 1001;
+			    left: 50%;
+			    top: 50%;
+			    transform: translate(-50%, -50%);
+			    padding: 5px;
+			    background-color: white;
+			    border-radius: 5px;
+			    display: none;
+		}
+		#frame_video.show {display: block;}
+		#close_video {
+			display: block;
+		    background-color: #03A9F4;
+		    border: 0;
+		    color: white;
+		    font-size: 14px;
+		    padding: 5px 15px;
+		    border-radius: 2px;
+		}
+	</style>
+
+	<div id="gallery"></div>
+	<div id="frame_video">
+		<iframe id="target_video" width="480" height="480" frameborder="0"></iframe>
+		<button id="close_video">Close</button>
+	</div>
+	<script src="../script.js"></script>
+</body>
+</html>
